@@ -24,37 +24,42 @@ class UserListsController(val fragment: UserListsFragment): BaseController(fragm
 		lateinit var listOfProducts: List<ListOfProducts>
 		CoroutineScope(IO).launch {
 			listOfProducts = productsDao.getAllItemsLists()
-
-		}.invokeOnCompletion {
+			// Move inflating on main thread
 			view.post {
 				listOfProducts.forEach { itemsList ->
-					val itemBinding = ListItemBinding.inflate(fragment.layoutInflater, binding.userListsFul, false)
-					// Text
-					itemBinding.listIdLi.text = "List id: ${itemsList.id}"
-					itemBinding.dateLi.setText(itemsList.createdAt)
-					itemBinding.listTitleLi.setText(itemsList.title)
-					// Listeners
-					itemBinding.root.setOnClickListener { view ->
-						Toast.makeText(view.context, "Clicked", Toast.LENGTH_SHORT).show()
-						sharedViewModel.clickedList.value = itemsList.id
-						fragment.findNavController().navigate(R.id.action_yourCartFragment_to_itemsInOneList)
-					}
-					itemBinding.deleteListLi.setOnClickListener {
-						binding.userListsFul.removeView(itemBinding.root)
-						CoroutineScope(IO).launch {
-							val id = itemsList.id
-							productsDao.deleteOne(id)
-							// Reset selected id if selected list was deleted
-							if (selectedIdDao.getId().id == id)
-							{
-								selectedIdDao.updateId(SelectedListId(1))
-							}
-						}
-					}
-					binding.userListsFul.addView(itemBinding.root)
+					val userListBinding = createUserListView(itemsList)
+					binding.userListsFul.addView(userListBinding.root)
 				}
 			}
 		}
+	}
+
+	private fun createUserListView(itemsList: ListOfProducts): ListItemBinding
+	{
+		val itemBinding = ListItemBinding.inflate(fragment.layoutInflater, binding.userListsFul, false)
+		// Text
+		itemBinding.listIdLi.text = "List id: ${itemsList.id}"
+		itemBinding.dateLi.setText(itemsList.createdAt)
+		itemBinding.listTitleLi.setText(itemsList.title)
+		// Listeners
+		itemBinding.root.setOnClickListener { view ->
+			Toast.makeText(view.context, "Clicked", Toast.LENGTH_SHORT).show()
+			sharedViewModel.clickedList.value = itemsList.id
+			fragment.findNavController().navigate(R.id.action_yourCartFragment_to_itemsInOneList)
+		}
+		itemBinding.deleteListLi.setOnClickListener {
+			binding.userListsFul.removeView(itemBinding.root)
+			CoroutineScope(IO).launch {
+				val id = itemsList.id
+				productsDao.deleteOne(id)
+				// Reset selected id if selected list was deleted
+				if (selectedIdDao.getId().id == id)
+				{
+					selectedIdDao.updateId(SelectedListId(1))
+				}
+			}
+		}
+		return itemBinding
 	}
 
 	override fun cleanAfterYourself()
