@@ -37,7 +37,6 @@ class ProductsInAListController(val fragment: ProductsInAListFragment): BaseCont
 		var products: List<Product>? = null
 		CoroutineScope(IO).launch {
 			products = productsDao.getListById(sharedViewModel.clickedList.value!!)?.products
-		}.invokeOnCompletion {
 			view.post {
 				vm.setUnparsedProducts(products)
 				vm.setProducts(products)
