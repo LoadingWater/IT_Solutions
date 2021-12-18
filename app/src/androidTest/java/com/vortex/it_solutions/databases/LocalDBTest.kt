@@ -1,6 +1,7 @@
 package com.vortex.it_solutions.databases
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -72,6 +73,31 @@ class LocalDBTest
 			listsDao.updateListProducts(listOf(product), 1)
 			val result = listsDao.getListById(1)
 			assertEquals(1, result?.products?.size)
+		}
+	}
+
+	@Test
+	fun add_three_lists_return_size()
+	{
+		Log.d("TESTING", "STart")
+		val product = Product()
+		product.price = 13231f
+		product.title = "Test product"
+		product.category = "Test category"
+		val listOne = listOf(product, product, product)
+
+		val itemsListOne = ListOfProducts("Test", emptyList(), "Now")
+
+		runBlocking {
+			listsDao.insertOneList(itemsListOne)
+			listsDao.insertOneList(itemsListOne)
+			listsDao.insertOneList(itemsListOne)
+
+			val result = listsDao.getAllItemsLists()
+			result.forEach {
+				Log.d("TESTING", it.id.toString())
+			}
+			assertEquals(3, result.size)
 		}
 	}
 }
