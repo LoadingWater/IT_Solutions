@@ -11,9 +11,6 @@ data class ListOfProducts(
 	val createdAt: String
 )
 {
-	//NOTE: For some reason it just doesn't work if you pass 0 here
-	// Every other number is fine.
-	// What's with auto increment?
 	@PrimaryKey(autoGenerate = true)
-	var id: Int = 1
+	var id: Int = 0
 }
