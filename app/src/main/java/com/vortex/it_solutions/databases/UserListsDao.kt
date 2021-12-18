@@ -12,6 +12,9 @@ interface UserListsDao
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	suspend fun insertOneList(newListOfProducts: ListOfProducts): Long
 
+	@Insert(onConflict = OnConflictStrategy.REPLACE)
+	suspend fun insertAllLists(newLists: List<ListOfProducts>)
+
 	@Query("SELECT * FROM ListOfProducts WHERE id LIKE :id")
 	suspend fun getListById(id: Int): ListOfProducts?
 
