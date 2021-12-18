@@ -19,6 +19,7 @@ class LocalDBTest
 
 	private lateinit var db: LocalDB
 	private lateinit var listsDao: UserListsDao
+	private lateinit var selectedListId: SelectedListDao
 
 	@Before
 	fun setUp()
@@ -26,6 +27,7 @@ class LocalDBTest
 		val context = ApplicationProvider.getApplicationContext<Context>()
 		db = Room.inMemoryDatabaseBuilder(context, LocalDB::class.java).build()
 		listsDao = db.userListsDao()
+		selectedListId = db.selectedListDao()
 	}
 
 	@After
@@ -98,6 +100,19 @@ class LocalDBTest
 				Log.d("TESTING", it.id.toString())
 			}
 			assertEquals(3, result.size)
+		}
+	}
+
+	@Test
+	fun update_selection_four_times()
+	{
+		runBlocking {
+			selectedListId.createId(SelectedListId(1))
+			selectedListId.updateSelectedListId(2)
+			selectedListId.updateSelectedListId(3)
+			selectedListId.updateSelectedListId(4)
+			val finalId = selectedListId.getId()
+			assertEquals(4, finalId.id)
 		}
 	}
 }

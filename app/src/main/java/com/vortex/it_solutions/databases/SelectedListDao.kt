@@ -9,7 +9,10 @@ import androidx.room.Query
 interface SelectedListDao
 {
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	suspend fun updateId(id: SelectedListId)
+	suspend fun createId(id: SelectedListId)
+
+	@Query("UPDATE SelectedListId SET id = :newId")
+	suspend fun updateSelectedListId(newId: Int)
 
 	@Query("SELECT * FROM SelectedListId")
 	suspend fun getId(): SelectedListId
