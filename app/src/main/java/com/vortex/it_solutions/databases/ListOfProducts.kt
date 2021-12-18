@@ -6,9 +6,9 @@ import com.vortex.it_solutions.models.Product
 
 @Entity
 data class ListOfProducts(
-	val title: String,
-	val products: List<Product>,
-	val createdAt: String
+	var title: String,
+	var products: List<Product>,
+	var createdAt: String
 )
 {
 	@PrimaryKey(autoGenerate = true)
