@@ -13,4 +13,11 @@ data class ListOfProducts(
 {
 	@PrimaryKey(autoGenerate = true)
 	var id: Int = 0
+
+	constructor(
+		id: Int,
+		title: String,
+		products: List<Product>,
+		createdAt: String
+	) : this(title, products, createdAt)
 }
