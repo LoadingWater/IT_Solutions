@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">IT_Solutions</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="go_shopping">Go shopping</string>
+    <string name="your_lists">Your lists</string>
+    <string name="try_again">Try again</string>
+    <string name="results_in_category">Results:</string>
+    <string name="loading_string">Loading...</string>
+    <string name="on_results_load_fail">Failed to load results.</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="list_id">List id:</string>
+    <string name="your_products">Your products</string>
+</resources>

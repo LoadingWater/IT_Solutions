@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Programming/IT_Solutions/app/src/main/res/layout/activity_main.xml" value="0.3546875" />
+        <entry key="..\:/Programming/IT_Solutions/app/src/main/res/layout/category_item.xml" value="0.3546875" />
+        <entry key="..\:/Programming/IT_Solutions/app/src/main/res/layout/fragment_categories.xml" value="0.3546875" />
+        <entry key="..\:/Programming/IT_Solutions/app/src/main/res/layout/fragment_detailed_item.xml" value="0.3546875" />
+        <entry key="..\:/Programming/IT_Solutions/app/src/main/res/layout/fragment_items_screen.xml" value="0.3546875" />
+        <entry key="..\:/Programming/IT_Solutions/app/src/main/res/layout/fragment_start_screen.xml" value="0.3546875" />
+        <entry key="..\:/Programming/IT_Solutions/app/src/main/res/layout/single_item.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/activity_main.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/cart_item.xml" value="0.75" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/category_item.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_categories.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_detailed_item.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_detailed_product.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_items_in_one_list.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_items_screen.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_products_in_a_list.xml" value="0.19739583333333333" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_products_screen.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_starting_screen.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_user_lists.xml" value="0.34923076923076923" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_your_cart.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/fragment_your_lists.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/list_item.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/list_layout.xml" value="0.33" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/product_in_a_list_item.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/product_item.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/search_view.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/single_item.xml" value="0.3546875" />
+        <entry key="..\:/Programming/TASK/IT_Solutions/app/src/main/res/layout/your_lists.xml" value="0.3546875" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

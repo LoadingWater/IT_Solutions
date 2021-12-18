@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_navigation_am"
+    app:startDestination="@id/startingScreenFragment">
+
+    <fragment
+        android:id="@+id/startingScreenFragment"
+        android:name="com.vortex.it_solutions.fragments.StartingScreenFragment"
+        android:label="fragment_start_screen"
+        tools:layout="@layout/fragment_starting_screen" >
+        <action
+            android:id="@+id/action_startingScreenFragment_to_yourCartFragment"
+            app:destination="@id/yourCartFragment" />
+        <action
+            android:id="@+id/action_startingScreenFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment"
+            app:enterAnim="@anim/right_to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemsScreenFragment"
+        android:name="com.vortex.it_solutions.fragments.ProductsScreenFragment"
+        android:label="fragment_items_screen"
+        tools:layout="@layout/fragment_products_screen" >
+        <action
+            android:id="@+id/action_itemsScreenFragment_to_detailedItemFragment"
+            app:destination="@id/detailedItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedItemFragment"
+        android:name="com.vortex.it_solutions.fragments.DetailedProductFragment"
+        android:label="fragment_detailed_item"
+        tools:layout="@layout/fragment_detailed_product" />
+    <fragment
+        android:id="@+id/yourCartFragment"
+        android:name="com.vortex.it_solutions.fragments.UserListsFragment"
+        android:label="fragment_your_cart"
+        tools:layout="@layout/fragment_user_lists" >
+        <action
+            android:id="@+id/action_yourCartFragment_to_itemsInOneList"
+            app:destination="@id/itemsInOneList" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.vortex.it_solutions.fragments.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_categoriesFragment_to_itemsScreenFragment"
+            app:destination="@id/itemsScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemsInOneList"
+        android:name="com.vortex.it_solutions.fragments.ProductsInAListFragment"
+        android:label="fragment_items_in_one_list"
+        tools:layout="@layout/fragment_products_in_a_list" />
+    <action
+        android:id="@+id/action_global_yourCartFragment"
+        app:destination="@id/yourCartFragment"
+        app:enterAnim="@android:anim/fade_in" />
+</navigation>
