@@ -62,6 +62,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     // Room components
     def roomVersion = "2.3.0"
+    implementation("androidx.room:room-runtime:$roomVersion")
     implementation "androidx.room:room-ktx:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
 }
