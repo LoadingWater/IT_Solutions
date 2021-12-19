@@ -56,8 +56,17 @@ class DetailedProductController(val fragment: DetailedProductFragment): BaseCont
 		val sdf = SimpleDateFormat("dd/M/yyyy")
 		val currentDate = sdf.format(Date())
 		val items = ListOfProducts("List number 1", emptyList(), currentDate)
-		val newId = itemsDao.insertOneList(items)
-		selectedListIdDao.createId(SelectedListId(newId.toInt()))
+
+		var newId = itemsDao.insertOneList(items)
+		val currentId = selectedListIdDao.getId()
+		if (currentId == null)
+		{
+			selectedListIdDao.createId(SelectedListId(newId.toInt()))
+		}
+		else
+		{
+			selectedListIdDao.updateSelectedListId(newId.toInt())
+		}
 	}
 
 	/**

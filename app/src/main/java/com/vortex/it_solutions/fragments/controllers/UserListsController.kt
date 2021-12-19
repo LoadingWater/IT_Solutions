@@ -36,8 +36,11 @@ class UserListsController(val fragment: UserListsFragment): BaseController(fragm
 		Log.i("testing", "initFragmentViews(). User")
 		// Observers
 		CoroutineScope(IO).launch {
+			createSelectedId(1)
+			val id = selectedIdDao.getId().id
 			val listOfProducts = productsDao.getAllItemsLists()
 			view.post {
+				vm.selectedListId.value = id
 				vm.setUserLists(listOfProducts)
 			}
 		}
@@ -56,15 +59,6 @@ class UserListsController(val fragment: UserListsFragment): BaseController(fragm
 				}
 			}
 		})
-
-		// Check if selectionId is inserted
-		CoroutineScope(IO).launch {
-			createSelectedId(1)
-			val id = selectedIdDao.getId().id
-			view.post {
-				vm.selectedListId.value = id
-			}
-		}
 
 		// Listeners
 		binding.floatingActionButtonFul.setOnClickListener {
