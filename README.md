@@ -5,6 +5,9 @@ Lists support change of date and title.</br>
 
 <img src="https://user-images.githubusercontent.com/46053098/146675765-4fee0740-f031-4388-885b-6940cc0d4e0e.jpg" width=20% height=20%> <img src="https://user-images.githubusercontent.com/46053098/146675805-aca035f5-1e94-4841-8ba6-c29ea35c9353.jpg" width=20% height=20%> <img src="https://user-images.githubusercontent.com/46053098/146675806-dbd71637-28d0-41f8-aff9-5c5478496e6f.jpg" width=20% height=20%> <img src="https://user-images.githubusercontent.com/46053098/146675807-dbf2b394-1f4c-4d2d-bd3a-3bc4c86a8938.jpg" width=20% height=20%>
 
+## How to edit/select lists
+- Use long tap to select list that you want.
+- Type on a title or date to change their values.
 
 ### How does this work?
 - I used fragments navigation with MVC pattern. Fragments have controllers which responsible for initializing/updating data on the screen.</br></br>
