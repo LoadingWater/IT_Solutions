@@ -55,9 +55,9 @@ class DetailedProductController(val fragment: DetailedProductFragment): BaseCont
 	{
 		val sdf = SimpleDateFormat("dd/M/yyyy")
 		val currentDate = sdf.format(Date())
-		val items = ListOfProducts("First list", emptyList(), currentDate)
+		val items = ListOfProducts("List number 1", emptyList(), currentDate)
 		itemsDao.insertOneList(items)
-		selectedListIdDao.updateId(SelectedListId(items.id))
+		selectedListIdDao.createId(SelectedListId(items.id))
 	}
 
 	/**
@@ -65,7 +65,8 @@ class DetailedProductController(val fragment: DetailedProductFragment): BaseCont
 	 */
 	private suspend fun addProductToSelectedList(): Boolean
 	{
-		val id =  selectedListIdDao.getId().id
+		val id = selectedListIdDao.getId().id
+		Log.i(TAG, "Current id: $id")
 		val oldList = itemsDao.getListById(id)
 		if (oldList != null)
 		{

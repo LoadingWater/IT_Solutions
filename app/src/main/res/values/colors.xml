@@ -10,5 +10,10 @@
 
     <!-- Mine -->
     <color name="black_87">#DE000000</color>
+    <color name="white_80">#BFFFFFFF</color>
     <color name="edit_text_color">#EFE9E9</color>
+    <color name="accent_color">#31D8BF</color>
+    <color name="background_color">#5b8ecd</color>
+    <color name="list_color">#C9DFFF</color>
+    <color name="list_selection_color">#003b83</color>
 </resources>

@@ -8,5 +8,5 @@ class SharedViewModel: ViewModel()
 {
 	val selectedCategory = MutableLiveData<String>("")
 	val clickedProduct = MutableLiveData<Product>(Product())
-	val clickedList = MutableLiveData<Int>(0)
+	//val clickedList = MutableLiveData<Int>(0)
 }

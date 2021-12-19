@@ -36,7 +36,7 @@ class CategoriesFragment : Fragment()
 	override fun onDestroyView()
 	{
 		super.onDestroyView()
-		binding = null
 		controller = null
+		binding = null
 	}
 }

@@ -1,20 +1,18 @@
 package com.vortex.it_solutions.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.vortex.it_solutions.databinding.FragmentProductsInAListBinding
 import com.vortex.it_solutions.fragments.controllers.ProductsInAListController
-import com.vortex.it_solutions.view_models.ProductsInAListViewModel
 
 class ProductsInAListFragment : Fragment()
 {
 	var binding: FragmentProductsInAListBinding? = null
 	var controller: ProductsInAListController? = null
-	val productsInAListVM: ProductsInAListViewModel by viewModels()
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
 	{
@@ -31,10 +29,24 @@ class ProductsInAListFragment : Fragment()
 
 	}
 
+	override fun onResume()
+	{
+		Log.i("testing", "On resume Products")
+		super.onResume()
+	}
+
+	override fun onPause()
+	{
+		controller!!.saveToDB()
+		Log.i("testing", "On pause Products")
+		super.onPause()
+	}
+
 	override fun onDestroyView()
 	{
 		super.onDestroyView()
-		binding = null
+		controller?.cleanAfterYourself()
 		controller = null
+		binding = null
 	}
 }

@@ -51,7 +51,7 @@ class StartingScreenFragment : Fragment()
 		super.onDestroyView()
 		(activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 		activity?.findViewById<ImageButton>(R.id.goToLists_am)?.isVisible = true
-		binding = null
 		controller = null
+		binding = null
 	}
 }

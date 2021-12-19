@@ -31,7 +31,7 @@ class DetailedProductFragment : Fragment()
 	override fun onDestroyView()
 	{
 		super.onDestroyView()
-		binding = null
 		controller = null
+		binding = null
 	}
 }

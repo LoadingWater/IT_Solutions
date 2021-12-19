@@ -10,11 +10,7 @@ abstract class BaseController(fragment: Fragment)
 	val TAG = fragment::class.java.simpleName
 	val activity = fragment.requireActivity() as MainActivity
 	val view = fragment.requireView()
-	//protected val safeDB = (activity.application as CustomApplication).safeDB
 	val sharedViewModel: SharedViewModel = ViewModelProvider(fragment.requireActivity()).get(SharedViewModel::class.java)
-	//val newSharedViewModel: SharedViewModel = ViewModelProvider(fragment.requireActivity()).get(SharedViewModel::class.java)
-	//val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
-
 
 	/**
 	 * Sets up fragment views

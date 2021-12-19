@@ -12,34 +12,37 @@
         tools:layout="@layout/fragment_starting_screen" >
         <action
             android:id="@+id/action_startingScreenFragment_to_yourCartFragment"
-            app:destination="@id/yourCartFragment" />
+            app:destination="@id/userListsFragment"
+            app:popUpTo="@id/startingScreenFragment" />
         <action
             android:id="@+id/action_startingScreenFragment_to_categoriesFragment"
             app:destination="@id/categoriesFragment"
-            app:enterAnim="@anim/right_to_left" />
+            app:popUpTo="@id/startingScreenFragment" />
     </fragment>
     <fragment
-        android:id="@+id/itemsScreenFragment"
+        android:id="@+id/productsScreenFragment"
         android:name="com.vortex.it_solutions.fragments.ProductsScreenFragment"
         android:label="fragment_items_screen"
         tools:layout="@layout/fragment_products_screen" >
         <action
             android:id="@+id/action_itemsScreenFragment_to_detailedItemFragment"
-            app:destination="@id/detailedItemFragment" />
+            app:destination="@id/detailedProductFragment"
+            app:popUpTo="@id/productsScreenFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailedItemFragment"
+        android:id="@+id/detailedProductFragment"
         android:name="com.vortex.it_solutions.fragments.DetailedProductFragment"
         android:label="fragment_detailed_item"
         tools:layout="@layout/fragment_detailed_product" />
     <fragment
-        android:id="@+id/yourCartFragment"
+        android:id="@+id/userListsFragment"
         android:name="com.vortex.it_solutions.fragments.UserListsFragment"
         android:label="fragment_your_cart"
         tools:layout="@layout/fragment_user_lists" >
         <action
             android:id="@+id/action_yourCartFragment_to_itemsInOneList"
-            app:destination="@id/itemsInOneList" />
+            app:destination="@id/productsInAListFragment"
+            app:popUpTo="@id/userListsFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
@@ -48,15 +51,16 @@
         tools:layout="@layout/fragment_categories" >
         <action
             android:id="@+id/action_categoriesFragment_to_itemsScreenFragment"
-            app:destination="@id/itemsScreenFragment" />
+            app:destination="@id/productsScreenFragment"
+            app:popUpTo="@id/categoriesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/itemsInOneList"
+        android:id="@+id/productsInAListFragment"
         android:name="com.vortex.it_solutions.fragments.ProductsInAListFragment"
         android:label="fragment_items_in_one_list"
         tools:layout="@layout/fragment_products_in_a_list" />
     <action
         android:id="@+id/action_global_yourCartFragment"
-        app:destination="@id/yourCartFragment"
+        app:destination="@id/userListsFragment"
         app:enterAnim="@android:anim/fade_in" />
 </navigation>

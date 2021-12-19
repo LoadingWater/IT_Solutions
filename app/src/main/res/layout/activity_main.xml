@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/background_color">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar_am"
@@ -30,7 +31,7 @@
             android:id="@+id/goToLists_am"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:tint="?attr/colorOnPrimary"
+            app:tint="?android:attr/textColor"
             android:backgroundTint="?attr/colorPrimary"
             android:layout_gravity="end"
             android:layout_marginEnd="16dp"

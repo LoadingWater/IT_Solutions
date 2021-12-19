@@ -1,6 +1,7 @@
 package com.vortex.it_solutions.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,15 +23,28 @@ class UserListsFragment : Fragment()
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?)
 	{
 		super.onViewCreated(view, savedInstanceState)
-
 		controller = UserListsController(this)
 		controller!!.initFragmentViews()
 	}
 
+	override fun onResume()
+	{
+		Log.i("testing", "On resume User")
+		super.onResume()
+	}
+
+	override fun onPause()
+	{
+		controller!!.safeToDB()
+		Log.i("testing", "On pause User")
+		super.onPause()
+	}
+
 	override fun onDestroyView()
 	{
+		controller?.cleanAfterYourself()
 		super.onDestroyView()
-		binding = null
 		controller = null
+		binding = null
 	}
 }

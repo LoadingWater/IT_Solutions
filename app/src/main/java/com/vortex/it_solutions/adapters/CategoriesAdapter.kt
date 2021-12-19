@@ -48,7 +48,7 @@ class CategoriesAdapter(val categories: List<Category>, val fragment: Categories
 		{
 			root.setOnClickListener {
 				sharedViewModel.selectedCategory.value = categoryRaw
-				val nav = Navigation.createNavigateOnClickListener(R.id.itemsScreenFragment)
+				val nav = Navigation.createNavigateOnClickListener(R.id.productsScreenFragment)
 				nav.onClick(root)
 			}
 		}

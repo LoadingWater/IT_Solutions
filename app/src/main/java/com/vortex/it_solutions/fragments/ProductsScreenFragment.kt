@@ -36,8 +36,8 @@ class ProductsScreenFragment : Fragment()
 	override fun onDestroyView()
 	{
 		super.onDestroyView()
-		binding = null
-		controller = null
 		requireActivity().findViewById<SearchView>(R.id.search_view_am).isVisible = false
+		controller = null
+		binding = null
 	}
 }

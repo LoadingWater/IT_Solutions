@@ -3,7 +3,6 @@
 
     <style name="custom_button_style" parent="Widget.MaterialComponents.Button">
         <item name="textAllCaps">false</item>
-        <item name="android:backgroundTint">@color/teal_700</item>
     </style>
 
     <style name="category_text_style" parent="Widget.AppCompat.TextView">
